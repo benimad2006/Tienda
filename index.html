@@ -163,7 +163,7 @@ html,body{max-width:100%;overflow-x:hidden}
 img,video{max-width:100%}
 .intro>*,.hero>*,.prod>*,.cat>*,.steps>*,.rev>*,.packs>*,.tiles>*,.fg>*{min-width:0}
 .intro-txt{min-width:0}
-@media(max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(2,1fr)}.cat{grid-template-columns:repeat(2,1fr)}.prod{gap:32px}}
+@media(max-width:1000px){.packs{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(2,1fr)}.cat{grid-template-columns:repeat(2,1fr)}.prod{gap:32px}}
 @media(max-width:800px){
   .promo{font-size:12px;padding:8px 10px;line-height:1.35}
   header{padding:10px 4vw;gap:10px}
@@ -189,6 +189,9 @@ img,video{max-width:100%}
   .stats b{font-size:24px}
   h2{font-size:clamp(28px,8.4vw,38px)}
   .cat{grid-template-columns:1fr;gap:20px}
+  .packs{grid-template-columns:1fr;gap:16px}
+  .pk{padding:26px 20px}
+  .pk h3{font-size:24px}
   .tiles{gap:12px}
   .steps div,.rev div{padding:24px}
   .card,.pc{padding:20px}

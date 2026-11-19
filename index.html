@@ -155,6 +155,69 @@ nav a{position:relative;padding:4px 0}nav a.on{color:var(--can)}nav a.on::after{
 @keyframes pf{from{opacity:0}}@keyframes pu{from{transform:translateY(24px) scale(.97);opacity:0}}
 @media (prefers-reduced-motion:reduce){.pop,.pbox{animation:none}}
 @media(max-width:800px){.intro{grid-template-columns:1fr;gap:28px}.pbox{grid-template-columns:1fr;max-height:92vh;overflow:auto}.pbox>img{min-height:0;height:170px}.pc2{padding:26px 22px}.pc2 h2{font-size:26px}}
+
+/* ---- responsive fixes ---- */
+html{-webkit-text-size-adjust:100%}
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+img,video{max-width:100%}
+.intro>*,.hero>*,.prod>*,.cat>*,.steps>*,.rev>*,.packs>*,.tiles>*,.fg>*{min-width:0}
+.intro-txt{min-width:0}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:repeat(2,1fr)}.cat{grid-template-columns:repeat(2,1fr)}.prod{gap:32px}}
+@media(max-width:800px){
+  .promo{font-size:12px;padding:8px 10px;line-height:1.35}
+  header{padding:10px 4vw;gap:10px}
+  header .hr{gap:8px;flex-wrap:nowrap;margin-left:auto}
+  header .pill{padding:8px 14px;font-size:13px;white-space:nowrap}
+  nav{margin:0 -4vw;width:calc(100% + 8vw);padding:0 4vw 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  .hero,.intro{padding-left:5vw;padding-right:5vw}
+  .intro{padding-top:32px;padding-bottom:40px}
+  .mega,.intro .mega{font-size:clamp(34px,11vw,52px);line-height:1}
+  .intro p{max-width:none;font-size:16px;margin:18px 0 24px}
+  .btn.sq{gap:20px;padding:17px 24px}
+  .hero h1{font-size:clamp(34px,10.5vw,48px)}
+  .hero p{font-size:16px;max-width:none}
+  .cd{gap:6px;display:flex}.cd{font-size:13px}.cd b{padding:5px 8px;font-size:15px}.cdl{flex-basis:100%}
+  .pick{max-width:none}
+  .pick select{font-size:14px;text-overflow:ellipsis}
+  .pick .btn{padding:12px 18px;white-space:nowrap}
+  .hi{max-width:none}
+  .hi img{border-width:5px;border-radius:24px}
+  .bdg{right:6px;top:-12px;width:78px;height:78px;font-size:12px}
+  .stats{grid-template-columns:1fr;padding:28px 6vw}
+  .stats b{font-size:24px}
+  h2{font-size:clamp(28px,8.4vw,38px)}
+  .cat{grid-template-columns:1fr;gap:20px}
+  .tiles{gap:12px}
+  .steps div,.rev div{padding:24px}
+  .card,.pc{padding:20px}
+  .pc{border-radius:24px}
+  .pc h3{font-size:21px}
+  .news{border-radius:26px;padding:38px 6vw}
+  .news form{flex-direction:column}
+  .news input{min-width:0;width:100%}
+  .news .btn{width:100%}
+  footer{padding:44px 6vw 26px;margin-top:48px}
+  .fg{grid-template-columns:1fr 1fr;gap:24px}
+  .fg>div:first-child{grid-column:1/-1}
+  .fl img{height:80px}
+  summary{font-size:17px}
+  .drawer{width:100%}
+  .toast{max-width:calc(100% - 32px);text-align:center;white-space:normal}
+}
+@media(max-width:480px){
+  .tiles{grid-template-columns:1fr}
+  .tile{padding:20px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+  .tile span{grid-row:1/4;margin:0}
+  .fg{grid-template-columns:1fr}
+  .sizes button{width:56px}
+  .code{font-size:26px}
+}
+@media(max-width:360px){
+  header .pill{padding:7px 10px;font-size:12px}
+  .lg{height:28px}
+}
 </style>
 </head>
 <body>
@@ -167,10 +230,10 @@ nav a{position:relative;padding:4px 0}nav a.on{color:var(--can)}nav a.on::after{
 
 <main>
 <div class="pg" id="pg-inicio">
-<section class="intro"><div class="it"><h2 class="mega">Estilo que transforma el día de tu perro</h2><p>Disfraces, juguetes y descanso. Haz espacio para lo que más quiere tu peludo.</p><a class="btn sq" href="#productos">Explora la colección <span>↗</span></a></div><img data-s alt="Canela Pet: juguetes y descanso para tu perro, oferta Black Friday"></section>
+<section class="intro"><div class="intro-txt"><h2 class="mega">Estilo que transforma el día de tu perro</h2><p>Disfraces, juguetes y descanso. Haz espacio para lo que más quiere tu peludo.</p><a class="btn sq" href="#productos">Explora la colección <span>↗</span></a></div><img data-s alt="Canela Pet: juguetes y descanso para tu perro, oferta Black Friday"></section>
 <div class="hero">
   <div>
-    <div class="cd">La mejor oferta del año termina en <b id="d">00</b>:<b id="h">00</b>:<b id="m">00</b>:<b id="s">00</b></div>
+    <div class="cd"><span class="cdl">La mejor oferta del año termina en</span> <b id="d">00</b>:<b id="h">00</b>:<b id="m">00</b>:<b id="s">00</b></div>
     <h1>El mejor <em>estilo navideño</em> directo al armario de tu perro</h1>
     <p>Disfraces cómodos, cálidos y con mucha personalidad. Elegidos para las mejores fotos de estas fiestas.</p>
     <div class="pick">
@@ -355,7 +418,7 @@ function tick(){let t=Math.max(0,end-Date.now())/1000;
   $('#m').textContent=p(Math.floor(t%3600/60));$('#s').textContent=p(Math.floor(t%60))}
 tick();setInterval(tick,1000);cat();render();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.steps div,.rev div,.stats div,.news,details,h2').forEach(el=>{el.classList.add('rv');io.observe(el)});
+document.querySelectorAll('.steps div,.rev div,.stats div,.news,details,h2:not(.pbox h2)').forEach(el=>{el.classList.add('rv');io.observe(el)});
 
 const PGS={inicio:'Inicio',productos:'Productos',packs:'Packs','como-funciona':'Cómo funciona',opiniones:'Opiniones',ayuda:'Ayuda'};
 function route(){let h=location.hash.slice(1);if(!PGS[h])h='inicio';
